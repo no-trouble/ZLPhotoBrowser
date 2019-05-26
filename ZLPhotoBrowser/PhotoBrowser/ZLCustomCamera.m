@@ -878,6 +878,9 @@
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self dismissViewControllerAnimated:YES completion:nil];
+        if (self.cancelBlock) {
+            self.cancelBlock();
+        }
     });
 }
 
